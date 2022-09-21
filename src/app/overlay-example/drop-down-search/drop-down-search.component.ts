@@ -1,26 +1,44 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {CdkConnectedOverlay, ConnectedPosition, ScrollStrategy, ScrollStrategyOptions} from "@angular/cdk/overlay";
-import {delay, EMPTY, filter, iif, map, mapTo, merge, Observable, startWith, switchMap} from "rxjs";
-import {MatSlideToggleChange} from "@angular/material/slide-toggle";
-import {MatInput} from "@angular/material/input";
-import {FormControl} from "@angular/forms";
-import {FocusMonitor} from "@angular/cdk/a11y";
-// import { OverlayReference } from '@angular/cdk/overlay/index';
-
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
+import { Observable, merge, iif, EMPTY } from 'rxjs';
+import {
+  map,
+  filter,
+  mapTo,
+  startWith,
+  switchMap,
+  delay,
+} from 'rxjs/operators';
+import { FocusMonitor } from '@angular/cdk/a11y';
+import { MatInput } from '@angular/material/input';
+import {
+  CdkConnectedOverlay,
+  ConnectedPosition,
+  ScrollStrategyOptions,
+  ScrollStrategy,
+} from '@angular/cdk/overlay';
+import { FormControl } from '@angular/forms';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { ESCAPE } from '@angular/cdk/keycodes';
+// import { OverlayReference } from '@angular/cdk/overlay/overlay-reference';
 
 export interface State {
   flag: string;
   name: string;
   population: string;
 }
-
 @Component({
   selector: 'app-drop-down-search',
   templateUrl: './drop-down-search.component.html',
-  styleUrls: ['./drop-down-search.component.scss']
+  styleUrls: ['./drop-down-search.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropDownSearchComponent implements OnInit {
-
   showPanel$: Observable<boolean>;
 
   states: State[] = [
