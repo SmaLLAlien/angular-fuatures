@@ -5,7 +5,8 @@ $input-width: 35rem;
 }
 
 .drop-down-input {
-  width: $input-width;
+  max-width: $input-width;
+  width: 90vw;
 }
 .drop-down-input-active {
   z-index: 100000;
