@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {PortalBridgeService} from "../portal-bridge.service";
+import {CdkPortal} from "@angular/cdk/portal";
 
 export interface Order {
   item: string;
@@ -18,15 +20,21 @@ const ORDERS_DATA: Order[] = [
   templateUrl: './orders-page.component.html',
   styleUrls: ['./orders-page.component.scss']
 })
-export class OrdersPageComponent implements OnInit {
+export class OrdersPageComponent implements OnInit, OnDestroy {
+  @ViewChild(CdkPortal, {static: true}) portalContent: CdkPortal;
 
   displayedColumns: string[] = ['item', 'address', 'country'];
   dataSource = ORDERS_DATA;
 
 
-  constructor() { }
+  constructor(private portalBridge: PortalBridgeService) { }
 
   ngOnInit(): void {
+    this.portalBridge.setPortal(this.portalContent);
+  }
+
+  ngOnDestroy(): void {
+    this.portalContent.detach();
   }
 
 }
