@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject, Inject} from '@angular/core';
+import {WINDOW} from "./window.token";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-features';
+
+  constructor(@Inject(WINDOW) private window: Window) {
+    const window2 = inject(WINDOW);
+    console.log(this.window, 'window')
+  }
 }
