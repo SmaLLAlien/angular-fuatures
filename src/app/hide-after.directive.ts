@@ -20,7 +20,7 @@ export class HideAfterDirective implements OnInit {
   }
   private _delay: number = 0;
 
-  @Input('hideAfterLater') placeholder: TemplateRef<any> | null = null;
+  @Input('hideAfterLater') placeholder: TemplateRef<HideAfterContext> | null = null;
 
   private context = new HideAfterContext();
 
@@ -45,4 +45,7 @@ export class HideAfterDirective implements OnInit {
       this._delay);
   }
 
+  static ngTemplateContextGuard(dir: HideAfterDirective, ctx: unknown): ctx is HideAfterContext {
+    return true
+  }
 }
