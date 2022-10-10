@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-features';
+
+  toggleMenu(menuToggle: HTMLDivElement) {
+    menuToggle.classList.toggle('active');
+  }
 }
