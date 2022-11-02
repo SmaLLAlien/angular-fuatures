@@ -1,0 +1,30 @@
+<div class="container" #container>
+  <div class="block b1">
+    <div class="block__item" *ngFor="let item of b1; let i = index">
+      <app-item [blockTitle]="item.name" [index]="i" [type]="'b1'"></app-item>
+    </div>
+  </div>
+  <div class="block b2">
+    <div class="block__item" *ngFor="let item of b2; let i = index">
+      <app-item [blockTitle]="item.name" [index]="i" [type]="'b2'"></app-item>
+    </div>
+  </div>
+
+  <div class="block b3">
+    <div class="block__item" *ngFor="let item of b3; let i = index">
+      <app-item [blockTitle]="item.name" [index]="i" [type]="'b3'"></app-item>
+    </div>
+  </div>
+
+  <div class="block b4">
+    <div class="block__item" *ngFor="let item of b4; let i = index">
+      <app-item [blockTitle]="item.name" [index]="i" [type]="'b4'"></app-item>
+    </div>
+  </div>
+
+  <div class="block b5">
+    <div class="block__item" *ngFor="let item of b5; let i = index">
+      <app-item [blockTitle]="item.name" [index]="i" [type]="'b5'"></app-item>
+    </div>
+  </div>
+</div>

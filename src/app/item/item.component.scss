@@ -1,0 +1,85 @@
+:host {
+  display: block;
+  width: 100%;
+  //height: 200px;
+  margin-bottom: 20px;
+}
+
+.item {
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+  height: 100%;
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px;
+  position: relative;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    opacity: 0.7;
+  }
+
+  &__number {
+    border-radius: 6px;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    color: gray;
+
+    &--green {
+      background: greenyellow;
+    }
+
+    &--red {
+      background: red;
+    }
+
+    &--yellow {
+      background: yellow;
+    }
+
+    &--gray {
+      background: lightgray;
+    }
+  }
+
+  &__controls {
+    margin-top: 10px;
+    display: flex;
+    color: gray;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    * {
+      flex-basis: 33.33333%;
+      padding: 0 2px;
+      box-sizing: border-box;
+      display: block;
+      font-size: 12px;
+    }
+
+    .mat-icon {
+      flex-basis: 24px;
+      font-size: 20px;
+    }
+  }
+
+  &__add {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    z-index: 1000000000;
+    background: #fff;
+  }
+}

@@ -8,9 +8,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { ComplexFormControlModule } from './complex-form-control/complex-form-control.module';
+import { SvgContainerComponent } from './svg-container/svg-container.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { ItemComponent } from './item/item.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SvgContainerComponent, ItemComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -18,6 +22,8 @@ import { ComplexFormControlModule } from './complex-form-control/complex-form-co
     MatButtonModule,
     LayoutModule,
     ComplexFormControlModule,
+    AppRoutingModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

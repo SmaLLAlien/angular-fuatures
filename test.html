@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<svg><line id="line1" stroke="red"  /></svg>
+<div style="display: flex; justify-content: space-between">
+  <div id="start" style="width: 100px; height: 100px; background:#e53935 ; "></div>
+  <div id="end" style="width: 100px; height: 100px; background:#4527a0 ;"></div>
+  <div id="three" style="width: 100px; height: 100px; background:#4527a0 ; margin-top: 150px;"></div>
+
+</div>
+
+
+
+<!--<script-->
+<!--  src="https://code.jquery.com/jquery-3.6.1.js"-->
+<!--  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="-->
+<!--  crossorigin="anonymous"></script>-->
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.7/leader-line.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+
+new LeaderLine(
+  document.getElementById('start'),
+  document.getElementById('end'),
+);
+new LeaderLine(
+  document.getElementById('start'),
+  document.getElementById('three'),
+);
+new LeaderLine(
+  document.getElementById('end'),
+  document.getElementById('three'),
+);
+</script>
+</body>
+</html>
