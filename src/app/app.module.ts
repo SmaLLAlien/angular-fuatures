@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 
-import { ComplexFormControlModule } from './complex-form-control/complex-form-control.module';
+import {AdvancedSearchControlModule} from "./advanced-search-control/advanced-search-control.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,7 @@ import { ComplexFormControlModule } from './complex-form-control/complex-form-co
     MatToolbarModule,
     MatButtonModule,
     LayoutModule,
-    ComplexFormControlModule,
+    AdvancedSearchControlModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
